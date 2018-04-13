@@ -64,7 +64,7 @@ function inquirePurchase() {
         console.log('Thank you for your order')
         console.log("Your total cost for " + quantityNeeded + " " + res[0].product_name + " is " + total + ".")
         config.query("UPDATE products SET stock_quantity = stock_quantity - " + quantityNeeded + " WHERE item_id = " + id)
-        // config.end()
+        config.end()
       } else {
         console.log('Insufficient quantity! Please change your order.')
         selectInventory()
